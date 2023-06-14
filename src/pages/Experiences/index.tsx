@@ -17,7 +17,6 @@ const Experiences: React.FC = () => {
 
   return (
     <Box
-      minH={isMobile ? "auto" : "100vh"}
       id="experiences"
       display="flex"
       flexDir="column"

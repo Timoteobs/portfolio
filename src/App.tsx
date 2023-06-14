@@ -37,9 +37,6 @@ const App: React.FC = () => {
           <Link href="#portfolio" fontWeight="bold">
             Portfolio
           </Link>
-          <Link href="#feedbacks" fontWeight="bold">
-            Feedbacks
-          </Link>
         </Stack>
       </Box>
 
@@ -48,7 +45,6 @@ const App: React.FC = () => {
         <Experiences />
         <Skills />
         <Portfolio />
-        <Feedbacks />
       </Box>
     </ChakraProvider>
   );

@@ -55,7 +55,7 @@ const Portfolio: React.FC = () => {
             <CardBody>
               <Box display="flex" alignItems="center" justifyContent="center">
                 <Image
-                  src="https://play-lh.googleusercontent.com/MtEwTEZa0RsJWF--2tMdlC10GC_QX_sdxDyUF1TGW_NjaMftAto0NDXoCe7HvZawNA=w240-h480-rw"
+                  src={el.image}
                   alt="Green double couch with wooden legs"
                   borderRadius="lg"
                 />
@@ -70,32 +70,37 @@ const Portfolio: React.FC = () => {
                 </Button>
               </Stack>
               <Flex flexDir="column" gap="10px" mt="30px">
-                <Button
-                  variant="outline"
-                  borderRadius="md"
-                  colorScheme="gray"
-                  fontWeight="bold"
-                  leftIcon={<Icon as={FaApple} boxSize={5} />}
-                  w="100%"
-                  onClick={() => {
-                    handleButtonClick(el.linkAppStore);
-                  }}
-                >
-                  App Store
-                </Button>
-                <Button
-                  variant="outline"
-                  borderRadius="md"
-                  colorScheme="gray"
-                  fontWeight="bold"
-                  leftIcon={<Icon as={FaGooglePlay} boxSize={5} />}
-                  w="100%"
-                  onClick={() => {
-                    handleButtonClick(el.linkGooglePlay);
-                  }}
-                >
-                  Google Play
-                </Button>
+                {el.linkGooglePlay && (
+                  <Button
+                    variant="outline"
+                    borderRadius="md"
+                    colorScheme="gray"
+                    fontWeight="bold"
+                    leftIcon={<Icon as={FaApple} boxSize={5} />}
+                    w="100%"
+                    onClick={() => {
+                      handleButtonClick(el.linkAppStore);
+                    }}
+                  >
+                    App Store
+                  </Button>
+                )}
+
+                {el.linkGooglePlay && (
+                  <Button
+                    variant="outline"
+                    borderRadius="md"
+                    colorScheme="gray"
+                    fontWeight="bold"
+                    leftIcon={<Icon as={FaGooglePlay} boxSize={5} />}
+                    w="100%"
+                    onClick={() => {
+                      handleButtonClick(el.linkGooglePlay);
+                    }}
+                  >
+                    Google Play
+                  </Button>
+                )}
                 {el.linkGitHub && (
                   <Button
                     variant="outline"

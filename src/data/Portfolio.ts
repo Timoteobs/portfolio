@@ -31,4 +31,14 @@ export const ProjectsList: Project[] = [
       "https://apps.apple.com/br/app/gymtime-parceiros/id1597513158",
     linkGitHub: "",
   },
+  {
+    name: "Valorant",
+    description:
+      "Application consuming the Valorant Riot Games API, listing and showing details about agents and weapons.",
+    image:
+      "https://media.licdn.com/dms/image/C4D22AQHr11BSURd0Ig/feedshare-shrink_2048_1536/0/1675716797200?e=1689811200&v=beta&t=0C9w8SrKWEwVgJ1U6HUEYc6Z8fC6KhzgdInaEqiGCDU",
+    linkGooglePlay: "",
+    linkAppStore: "",
+    linkGitHub: "https://github.com/Timoteobs/vavas",
+  },
 ];

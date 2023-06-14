@@ -1,9 +1,39 @@
-import { Box, Text, Fade } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  Fade,
+  HStack,
+  IconButton,
+  useToast,
+} from "@chakra-ui/react";
 import React from "react";
-
+import { FaLinkedin, FaGoogle, FaWhatsapp } from "react-icons/fa";
 const { innerHeight, innerWidth } = window;
 
 const About: React.FC = () => {
+  const toast = useToast();
+
+  const handleButtonClick = (link: string) => {
+    window.open(link, "_blank");
+  };
+
+  const copyToEmail = () => {
+    navigator.clipboard
+      .writeText("timoteo.barross@gmail.com")
+      .then(() => {
+        toast({
+          title: "Copied",
+          description: "timoteo.barross@gmail.com",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+        });
+      })
+      .catch((error) => {
+        console.error("Failed to copy text to clipboard:", error);
+      });
+  };
+
   return (
     <Box
       id="about"
@@ -15,9 +45,48 @@ const About: React.FC = () => {
     >
       <Box maxW={innerWidth / 2 + "px"}>
         <Fade in={true}>
-          <Text fontSize="6xl" mb="45px" textAlign="center">
+          <Text fontSize="6xl" textAlign="center">
             TIMÓTEO BARROS SILVEIRA
           </Text>
+          <Box
+            w="100%"
+            alignItems="center"
+            justifyContent="center"
+            display="flex"
+            mb="45px"
+          >
+            <HStack spacing={4}>
+              <IconButton
+                aria-label="LinkedIn"
+                icon={<FaLinkedin />}
+                variant="ghost"
+                colorScheme="gray"
+                onClick={() =>
+                  handleButtonClick(
+                    "https://www.linkedin.com/in/tim%C3%B3teo-barros-4b8a1b159/"
+                  )
+                }
+              />
+              <IconButton
+                aria-label="Instagram"
+                icon={<FaGoogle />}
+                variant="ghost"
+                colorScheme="gray"
+                onClick={copyToEmail}
+              />
+              <IconButton
+                aria-label="WhatsApp"
+                icon={<FaWhatsapp />}
+                variant="ghost"
+                colorScheme="gray"
+                onClick={() =>
+                  handleButtonClick(
+                    "https://api.whatsapp.com/send?phone=5581982251528"
+                  )
+                }
+              />
+            </HStack>
+          </Box>
         </Fade>
         <Box>
           <Text mb="20px" textAlign="center">
