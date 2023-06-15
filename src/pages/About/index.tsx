@@ -8,10 +8,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { FaLinkedin, FaGoogle, FaWhatsapp } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 const { innerHeight, innerWidth } = window;
 
 const About: React.FC = () => {
   const toast = useToast();
+  const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const handleButtonClick = (link: string) => {
     window.open(link, "_blank");
@@ -27,6 +29,7 @@ const About: React.FC = () => {
           status: "success",
           duration: 3000,
           isClosable: true,
+          position: "top",
         });
       })
       .catch((error) => {
@@ -37,15 +40,19 @@ const About: React.FC = () => {
   return (
     <Box
       id="about"
-      h={innerHeight + "px"}
+      minH={innerHeight + "px"}
       display="flex"
       alignItems="center"
       justifyContent="center"
       flexDirection="column"
     >
-      <Box maxW={innerWidth / 2 + "px"}>
+      <Box maxW={innerWidth + "px"}>
         <Fade in={true}>
-          <Text fontSize="6xl" textAlign="center">
+          <Text
+            fontSize={["4xl", "4xl", "4xl", "5xl", "6xl"]}
+            textAlign="center"
+            marginTop={isMobile ? "80px" : 0}
+          >
             TIMÓTEO BARROS SILVEIRA
           </Text>
           <Box
@@ -88,7 +95,7 @@ const About: React.FC = () => {
             </HStack>
           </Box>
         </Fade>
-        <Box>
+        <Box maxW={isMobile ? innerWidth : innerWidth / 2 + "px"}>
           <Text mb="20px" textAlign="center">
             Em resumo, ser um entusiasta do desenvolvimento é uma parte
             intrínseca de quem eu sou. A paixão, a curiosidade e a vontade de

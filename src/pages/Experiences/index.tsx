@@ -22,7 +22,7 @@ const Experiences: React.FC = () => {
       flexDir="column"
       mt={isMobile ? "0" : "45px"}
     >
-      <Text fontSize="5xl" mt="30px" mb="60px">
+      <Text fontSize="5xl" mt="50px" mb="60px">
         Experiences
       </Text>
       <SimpleGrid

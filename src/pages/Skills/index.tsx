@@ -25,7 +25,7 @@ const Skills: React.FC = () => {
       flexDir="column"
       mt={isMobile ? "0" : "45px"}
     >
-      <Text fontSize="5xl" mt="30px" mb="60px">
+      <Text fontSize="5xl" mt="50px" mb="60px">
         Skills
       </Text>
       <Flex gap={isMobile ? "20px" : "16px"} flexWrap="wrap">
