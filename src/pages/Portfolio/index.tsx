@@ -54,11 +54,7 @@ const Portfolio: React.FC = () => {
           <Card maxW="300px" key={index}>
             <CardBody>
               <Box display="flex" alignItems="center" justifyContent="center">
-                <Image
-                  src={el.image}
-                  alt="Green double couch with wooden legs"
-                  borderRadius="lg"
-                />
+                <Image src={el.image} borderRadius="lg" />
               </Box>
               <Stack mt="6" spacing="3">
                 <Heading size="md">{el.name}</Heading>
@@ -115,6 +111,22 @@ const Portfolio: React.FC = () => {
                   >
                     <Flex align="center">
                       <Text fontWeight="bold">GitHub</Text>
+                    </Flex>
+                  </Button>
+                )}
+                {el.link && (
+                  <Button
+                    variant="outline"
+                    borderRadius="md"
+                    colorScheme="gray"
+                    fontWeight="bold"
+                    w="100%"
+                    onClick={() => {
+                      handleButtonClick(el.link);
+                    }}
+                  >
+                    <Flex align="center">
+                      <Text fontWeight="bold">Access</Text>
                     </Flex>
                   </Button>
                 )}

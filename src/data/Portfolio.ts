@@ -1,3 +1,5 @@
+import Lipe from "../images/lipe.png";
+import Vavas from "../images/vavas.jpeg";
 export interface Project {
   name: string;
   image: string;
@@ -5,6 +7,7 @@ export interface Project {
   linkAppStore: string;
   linkGooglePlay: string;
   linkGitHub: string;
+  link: string;
 }
 
 export const ProjectsList: Project[] = [
@@ -18,6 +21,7 @@ export const ProjectsList: Project[] = [
       "https://play.google.com/store/apps/details?id=com.gymtime.user",
     linkAppStore: "https://apps.apple.com/br/app/gymtime/id1595957760",
     linkGitHub: "",
+    link: "",
   },
   {
     name: "Gymtime Parceiros",
@@ -30,15 +34,25 @@ export const ProjectsList: Project[] = [
     linkAppStore:
       "https://apps.apple.com/br/app/gymtime-parceiros/id1597513158",
     linkGitHub: "",
+    link: "",
   },
   {
     name: "Valorant",
     description:
       "Application consuming the Valorant Riot Games API, listing and showing details about agents and weapons.",
-    image:
-      "https://media.licdn.com/dms/image/C4D22AQHr11BSURd0Ig/feedshare-shrink_2048_1536/0/1675716797200?e=1689811200&v=beta&t=0C9w8SrKWEwVgJ1U6HUEYc6Z8fC6KhzgdInaEqiGCDU",
+    image: Vavas,
     linkGooglePlay: "",
     linkAppStore: "",
     linkGitHub: "https://github.com/Timoteobs/vavas",
+    link: "",
+  },
+  {
+    name: "Landing page",
+    description: "Landing page aimed at the psychology sector",
+    image: Lipe,
+    linkGooglePlay: "",
+    linkAppStore: "",
+    linkGitHub: "",
+    link: "https://psifilipearaujo.com.br/",
   },
 ];
